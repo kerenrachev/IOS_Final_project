@@ -29,6 +29,9 @@
 		3BD04F232A56EB1200F8FC37 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3BD04F222A56EB1200F8FC37 /* FirebaseStorage */; };
 		3BD04F252A56EB1200F8FC37 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3BD04F242A56EB1200F8FC37 /* FirebaseStorageCombine-Community */; };
 		3BD04F272A57001800F8FC37 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F262A57001800F8FC37 /* TabBarController.swift */; };
+		3BD04F292A571BF100F8FC37 /* pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3BD04F282A571BF100F8FC37 /* pizza.jpeg */; };
+		3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */; };
+		3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		3BD04F002A56DCB000F8FC37 /* Final_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3BD04F0D2A56E21600F8FC37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BD04F262A57001800F8FC37 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3BD04F282A571BF100F8FC37 /* pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpeg; sourceTree = "<group>"; };
+		3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemController.swift; sourceTree = "<group>"; };
+		3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +135,14 @@
 				3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */,
 				3BD04EE12A56DCAE00F8FC37 /* ViewController.swift */,
 				3BD04EE32A56DCAE00F8FC37 /* Main.storyboard */,
+				3BD04F282A571BF100F8FC37 /* pizza.jpeg */,
 				3BD04F0D2A56E21600F8FC37 /* GoogleService-Info.plist */,
 				3BD04EE62A56DCAF00F8FC37 /* Assets.xcassets */,
 				3BD04EE82A56DCAF00F8FC37 /* LaunchScreen.storyboard */,
 				3BD04EEB2A56DCAF00F8FC37 /* Info.plist */,
 				3BD04F262A57001800F8FC37 /* TabBarController.swift */,
+				3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */,
+				3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */,
 			);
 			path = Final_Project;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 				3BD04EEA2A56DCAF00F8FC37 /* LaunchScreen.storyboard in Resources */,
 				3BD04F0E2A56E21600F8FC37 /* GoogleService-Info.plist in Resources */,
 				3BD04EE72A56DCAF00F8FC37 /* Assets.xcassets in Resources */,
+				3BD04F292A571BF100F8FC37 /* pizza.jpeg in Resources */,
 				3BD04EE52A56DCAE00F8FC37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD04EE22A56DCAE00F8FC37 /* ViewController.swift in Sources */,
+				3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */,
+				3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */,
 				3BD04F272A57001800F8FC37 /* TabBarController.swift in Sources */,
 				3BD04EDE2A56DCAE00F8FC37 /* AppDelegate.swift in Sources */,
 				3BD04EE02A56DCAE00F8FC37 /* SceneDelegate.swift in Sources */,

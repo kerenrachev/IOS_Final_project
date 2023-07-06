@@ -77,7 +77,7 @@ class ViewController: UIViewController {
             strongSelf.password.resignFirstResponder()
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
+            let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
             
             
             //strongSelf.present(gameController, animated: true, completion: nil)
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
                 strongSelf.password.resignFirstResponder()
                 
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
+                let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
                 
                 strongSelf.show(tabBarController, sender: self)
             })
