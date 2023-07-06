@@ -32,6 +32,8 @@
 		3BD04F292A571BF100F8FC37 /* pizza.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3BD04F282A571BF100F8FC37 /* pizza.jpeg */; };
 		3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */; };
 		3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */; };
+		3BD04F312A5733D600F8FC37 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F302A5733D600F8FC37 /* Recipe.swift */; };
+		3BD04F332A573DBB00F8FC37 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		3BD04F282A571BF100F8FC37 /* pizza.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpeg; sourceTree = "<group>"; };
 		3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemController.swift; sourceTree = "<group>"; };
 		3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListController.swift; sourceTree = "<group>"; };
+		3BD04F302A5733D600F8FC37 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				3BD04F262A57001800F8FC37 /* TabBarController.swift */,
 				3BD04F2C2A571DA500F8FC37 /* RecipeItemController.swift */,
 				3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */,
+				3BD04F302A5733D600F8FC37 /* Recipe.swift */,
+				3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */,
 			);
 			path = Final_Project;
 			sourceTree = "<group>";
@@ -314,7 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD04EE22A56DCAE00F8FC37 /* ViewController.swift in Sources */,
+				3BD04F332A573DBB00F8FC37 /* TableViewCell.swift in Sources */,
 				3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */,
+				3BD04F312A5733D600F8FC37 /* Recipe.swift in Sources */,
 				3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */,
 				3BD04F272A57001800F8FC37 /* TabBarController.swift in Sources */,
 				3BD04EDE2A56DCAE00F8FC37 /* AppDelegate.swift in Sources */,
