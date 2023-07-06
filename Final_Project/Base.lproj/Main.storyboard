@@ -179,7 +179,7 @@
         <!--Recipe Item Controller-->
         <scene sceneID="4Eg-4i-Auk">
             <objects>
-                <viewController id="1fP-HG-LFd" customClass="RecipeItemController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recipeItemController" id="1fP-HG-LFd" customClass="RecipeItemController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T0o-WM-d5G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,6 +270,12 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="contentText" destination="0wC-p2-RaT" id="iES-q8-lRU"/>
+                        <outlet property="imageView" destination="8NT-4Y-lUr" id="IwJ-C4-Zh4"/>
+                        <outlet property="nameLabel" destination="U5S-2g-W4d" id="Kb0-UE-TjR"/>
+                        <outlet property="timeLabel" destination="kX9-Dw-N8f" id="g7b-yJ-2dO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHl-lt-4Ad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
