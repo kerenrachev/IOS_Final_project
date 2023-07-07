@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6CB8472A57FF1A00E13BBC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CB8462A57FF1A00E13BBC /* ProfileController.swift */; };
 		3BD04EDE2A56DCAE00F8FC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EDD2A56DCAE00F8FC37 /* AppDelegate.swift */; };
 		3BD04EE02A56DCAE00F8FC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */; };
 		3BD04EE22A56DCAE00F8FC37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EE12A56DCAE00F8FC37 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B6CB8462A57FF1A00E13BBC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		3BD04EDA2A56DCAE00F8FC37 /* Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD04EDD2A56DCAE00F8FC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				3BD04F302A5733D600F8FC37 /* Recipe.swift */,
 				3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */,
 				3BD04F342A57D66200F8FC37 /* newRecipeController.swift */,
+				3B6CB8462A57FF1A00E13BBC /* ProfileController.swift */,
 			);
 			path = Final_Project;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */,
 				3BD04F352A57D66200F8FC37 /* newRecipeController.swift in Sources */,
 				3BD04F312A5733D600F8FC37 /* Recipe.swift in Sources */,
+				3B6CB8472A57FF1A00E13BBC /* ProfileController.swift in Sources */,
 				3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */,
 				3BD04F272A57001800F8FC37 /* TabBarController.swift in Sources */,
 				3BD04EDE2A56DCAE00F8FC37 /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    var defUserPic = "https://cdn.vectorstock.com/i/1000x1000/30/97/flat-business-man-user-profile-avatar-icon-vector-4333097.webp"
     
     @IBOutlet weak var emailAddress: UITextField!
     
@@ -39,25 +41,11 @@ class ViewController: UIViewController {
     
     
     @objc private func submitButtonTapped(){
-        print("Button clcicked!!!")
         guard let email = emailAddress.text, !email.isEmpty,
               let passwordVal = password.text, !passwordVal.isEmpty else{
                   print("Missing email or password")
                   return
               }
-        
-        // GEt Auth instance
-        
-        //Atempt sign-in
-        
-        // If failure, present alert to create accounr
-        
-        // If user continues, create account
-        
-        // Check sign in on app launch
-        
-        // Allow user to sign out with button
-        
         
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: passwordVal, completion: { [weak self] result, error in
             
@@ -71,8 +59,6 @@ class ViewController: UIViewController {
                 return
             }
             
-            
-            print ("You have signed in")
             strongSelf.emailAddress.resignFirstResponder()
             strongSelf.password.resignFirstResponder()
             
@@ -80,7 +66,6 @@ class ViewController: UIViewController {
             let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
             
             
-            //strongSelf.present(gameController, animated: true, completion: nil)
             strongSelf.show(tabBarController, sender: self)
             
         })
@@ -100,12 +85,16 @@ class ViewController: UIViewController {
                     return
                 }
                 
+                // Create the user in the database with default picture, and empty array of favorite recipes
+                let db = Firestore.firestore()
+                db.collection("users").document(FirebaseAuth.Auth.auth().currentUser!.email!).setData(["picUrl": strongSelf.defUserPic, "favorites": [] ])
                 
-                print ("You have signed in")
-                
+                // Close keyboard
                 strongSelf.emailAddress.resignFirstResponder()
                 strongSelf.password.resignFirstResponder()
                 
+                
+                // Open the application
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
                 
