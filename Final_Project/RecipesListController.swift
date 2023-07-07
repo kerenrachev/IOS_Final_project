@@ -18,7 +18,6 @@ class RecipesListController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        retrieveRecipes()
         
     }
     

@@ -37,6 +37,11 @@ class ProfileController: UIViewController {
     @IBAction func uploadImageButton(_ sender: Any) {
         
         print("Change picture button tapped")
+        let vc  = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
     }
     
     @IBOutlet weak var userEmail: UILabel!
@@ -72,4 +77,63 @@ class ProfileController: UIViewController {
         
             
     }
+}
+
+
+extension ProfileController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            profileImage.image = image
+            
+            
+            guard profileImage.image != nil else{
+                return
+            }
+            let storageRef = Storage.storage().reference()
+            let imageData = profileImage.image!.jpegData(compressionQuality: 0.8)
+            
+            guard imageData != nil else {
+                return
+            }
+            
+            let fileRef = storageRef.child("images/" + UUID().uuidString + ".jpeg")
+            
+            let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+                
+                if error == nil && metadata != nil {
+                    // Save a reference intht database
+                    print("Uploaded pictre")
+                    
+                    let db = Firestore.firestore()
+                    // You can also access to download URL after upload.
+                    fileRef.downloadURL { (url, error) in
+                      guard let downloadURL = url else {
+                        // Uh-oh, an error occurred!
+                        return
+                      }
+                    let mail = FirebaseAuth.Auth.auth().currentUser!.email!
+                        db.collection("users/").document(mail).setData(["picUrl":downloadURL.absoluteString])
+                        
+                    let alert = UIAlertController(title: "Image Uploaded", message: "Your new profile image has uploaded successfully!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {_ in}))
+                        self.present(alert,animated: true)
+                    }
+
+                    
+                    
+                }
+                
+            }
+            // Replace user's image in the database and display alert
+        }
+    
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }
