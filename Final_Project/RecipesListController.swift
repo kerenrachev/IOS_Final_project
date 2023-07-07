@@ -7,47 +7,40 @@
 
 import Foundation
 import UIKit
-
+import FirebaseFirestore
 class RecipesListController: UIViewController {
 
     var recipes: [Recipe] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        retrieveRecipes()
         
-        initObject()
+    }
+    
+    func retrieveRecipes(){
+        let db = Firestore.firestore()
         
-        // Get the data from the database
-        tableView.delegate = self
-        tableView.dataSource = self
+        db.collection("recipes").getDocuments{snapshot, error in
+            if error == nil && snapshot != nil{
+                for doc in snapshot!.documents {
+                    let recipe = Recipe(author: doc["author"] as! String, imageUrl: doc["imageUrl"] as! String, recName: doc["recName"] as! String, content: doc["content"] as! String, prepTime: doc["prepTime"] as! String)
+                    self.recipes.append(recipe)
+                }
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+            }
+            
+        }
+        
+        
     }
     
     
     @IBOutlet weak var tableView: UITableView!
-    
-    func initObject(){
-        let rec1 = Recipe(author: "test1", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test1", content: "umiu,", prepTime: "1 hour")
-        let rec2 = Recipe(author: "test2", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test2", content: "sdvdsvsdv", prepTime: "8 hour")
-        let rec3 = Recipe(author: "test3", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test3", content: "sdvsvsdvsdv", prepTime: "1 hour")
-        let rec4 = Recipe(author: "test4", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test4", content: "muimyumyum", prepTime: "6 hour")
-        let rec5 = Recipe(author: "test5", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test5", content: "adav", prepTime: "20 min")
-        let rec6 = Recipe(author: "test6", imageUrl: "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*", recName: "test6", content: "aca", prepTime: "1 hour")
-        
-        recipes.append(rec1)
-        recipes.append(rec2)
-        recipes.append(rec3)
-        recipes.append(rec4)
-        recipes.append(rec5)
-        recipes.append(rec6)
-    }
 }
-
-
-
 
 extension RecipesListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped me")
-        
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let recipeItemController = storyBoard.instantiateViewController(withIdentifier: "recipeItemController") as! RecipeItemController
@@ -61,10 +54,6 @@ extension RecipesListController: UITableViewDelegate {
         recipeItemController.nameLabel.text = recipes[indexPath.row].recName
         recipeItemController.timeLabel.text = recipes[indexPath.row].prepTime
         recipeItemController.contentText.text = recipes[indexPath.row].content
-        
-        
-        
-        
     }
 }
 

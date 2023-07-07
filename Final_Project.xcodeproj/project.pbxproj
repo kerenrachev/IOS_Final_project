@@ -34,6 +34,7 @@
 		3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */; };
 		3BD04F312A5733D600F8FC37 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F302A5733D600F8FC37 /* Recipe.swift */; };
 		3BD04F332A573DBB00F8FC37 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */; };
+		3BD04F352A57D66200F8FC37 /* newRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04F342A57D66200F8FC37 /* newRecipeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListController.swift; sourceTree = "<group>"; };
 		3BD04F302A5733D600F8FC37 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3BD04F342A57D66200F8FC37 /* newRecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRecipeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				3BD04F2E2A57274C00F8FC37 /* RecipesListController.swift */,
 				3BD04F302A5733D600F8FC37 /* Recipe.swift */,
 				3BD04F322A573DBB00F8FC37 /* TableViewCell.swift */,
+				3BD04F342A57D66200F8FC37 /* newRecipeController.swift */,
 			);
 			path = Final_Project;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				3BD04EE22A56DCAE00F8FC37 /* ViewController.swift in Sources */,
 				3BD04F332A573DBB00F8FC37 /* TableViewCell.swift in Sources */,
 				3BD04F2F2A57274C00F8FC37 /* RecipesListController.swift in Sources */,
+				3BD04F352A57D66200F8FC37 /* newRecipeController.swift in Sources */,
 				3BD04F312A5733D600F8FC37 /* Recipe.swift in Sources */,
 				3BD04F2D2A571DA500F8FC37 /* RecipeItemController.swift in Sources */,
 				3BD04F272A57001800F8FC37 /* TabBarController.swift in Sources */,
