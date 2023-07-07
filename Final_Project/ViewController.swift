@@ -64,8 +64,8 @@ class ViewController: UIViewController {
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-            tabBarController.modalPresentationStyle = .fullScreen
             
+            tabBarController.modalPresentationStyle = .fullScreen
             strongSelf.show(tabBarController, sender: self)
             
         })

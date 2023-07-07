@@ -114,7 +114,7 @@ extension ProfileController: UIImagePickerControllerDelegate, UINavigationContro
                         return
                       }
                     let mail = FirebaseAuth.Auth.auth().currentUser!.email!
-                        db.collection("users/").document(mail).setData(["picUrl":downloadURL.absoluteString])
+                        db.collection("users/").document(mail).updateData(["picUrl":downloadURL.absoluteString])
                         
                     let alert = UIAlertController(title: "Image Uploaded", message: "Your new profile image has uploaded successfully!", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {_ in}))

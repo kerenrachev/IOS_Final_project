@@ -62,11 +62,14 @@ extension RecipesListController: UITableViewDelegate {
         let url = URL(string: recipes[indexPath.row].imageUrl )
         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
         
+        recipeItemController.email = recipes[indexPath.row].author
         self.show(recipeItemController, sender: self)
         recipeItemController.imageView.image = UIImage(data: data!)
-        recipeItemController.nameLabel.text = recipes[indexPath.row].recName
+        recipeItemController.recipeName.text = recipes[indexPath.row].recName
         recipeItemController.timeLabel.text = recipes[indexPath.row].prepTime
         recipeItemController.contentText.text = recipes[indexPath.row].content
+        recipeItemController.autherEmail.text = recipes[indexPath.row].author
+        
     }
 }
 

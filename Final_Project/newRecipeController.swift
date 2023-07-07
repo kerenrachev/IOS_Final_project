@@ -14,10 +14,12 @@ import FirebaseAuth
 class NewRecipeController: UIViewController {
 
     override func viewDidLoad() {
+        errorMsg.isHidden = true
         super.viewDidLoad()
     }
     
     
+    @IBOutlet weak var errorMsg: UILabel!
     @IBOutlet weak var prepTimeInput: UITextField!
     
     @IBOutlet weak var recipeNameInput: UITextField!
@@ -39,13 +41,16 @@ class NewRecipeController: UIViewController {
     
     @IBAction func didTapSubmitButton(_ sender: Any) {
         
-        guard recipeImage.image != nil else{
+        guard recipeImage.image != nil && prepTimeInput.text != nil && prepTimeInput.text != "" && recipeNameInput.text != nil && recipeNameInput.text != "" && recipeDescriptionInput.text != nil &&  recipeDescriptionInput.text != "" else{
+            errorMsg.isHidden = false
+            print("Something is nil")
             return
         }
         let storageRef = Storage.storage().reference()
         let imageData = recipeImage.image!.jpegData(compressionQuality: 0.8)
         
-        guard imageData != nil else {
+        guard imageData != nil  else {
+            
             return
         }
         
@@ -72,6 +77,7 @@ class NewRecipeController: UIViewController {
                     let alert = UIAlertController(title: "Recipe Uploaded", message: "Your recipe has uploaded successfully!", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {_ in}))
                     self.present(alert, animated: true)
+                    self.errorMsg.isHidden = true
                     self.prepTimeInput.text = ""
                     self.recipeNameInput.text = ""
                     self.recipeImage.image = nil
