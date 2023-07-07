@@ -69,7 +69,13 @@ class NewRecipeController: UIViewController {
                  
                     db.collection("recipes/").document().setData(recipeObj)
                     
-                    // Save everything else in the data base as an recipe object + get the image url
+                    let alert = UIAlertController(title: "Recipe Uploaded", message: "Your recipe has uploaded successfully!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {_ in}))
+                    self.present(alert, animated: true)
+                    self.prepTimeInput.text = ""
+                    self.recipeNameInput.text = ""
+                    self.recipeImage.image = nil
+                    self.recipeDescriptionInput.text = ""
                 }
 
                 

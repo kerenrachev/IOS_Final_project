@@ -13,11 +13,24 @@ class RecipesListController: UIViewController {
     var recipes: [Recipe] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         retrieveRecipes()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        retrieveRecipes()
+    }
+    
     func retrieveRecipes(){
+        
+        recipes = []
+        tableView.reloadData()
+        
         let db = Firestore.firestore()
         
         db.collection("recipes").getDocuments{snapshot, error in
@@ -26,8 +39,9 @@ class RecipesListController: UIViewController {
                     let recipe = Recipe(author: doc["author"] as! String, imageUrl: doc["imageUrl"] as! String, recName: doc["recName"] as! String, content: doc["content"] as! String, prepTime: doc["prepTime"] as! String)
                     self.recipes.append(recipe)
                 }
-                self.tableView.delegate = self
-                self.tableView.dataSource = self
+                
+                self.tableView.reloadData()
+                
             }
             
         }
