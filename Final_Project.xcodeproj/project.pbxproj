@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B6CB8472A57FF1A00E13BBC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6CB8462A57FF1A00E13BBC /* ProfileController.swift */; };
+		3B6CB8492A618A5700E13BBC /* logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3B6CB8482A618A5700E13BBC /* logo.jpeg */; };
+		3B6CB84B2A61969600E13BBC /* logo-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6CB84A2A61969500E13BBC /* logo-color.png */; };
 		3BD04EDE2A56DCAE00F8FC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EDD2A56DCAE00F8FC37 /* AppDelegate.swift */; };
 		3BD04EE02A56DCAE00F8FC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */; };
 		3BD04EE22A56DCAE00F8FC37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD04EE12A56DCAE00F8FC37 /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		3B6CB8462A57FF1A00E13BBC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		3B6CB8482A618A5700E13BBC /* logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpeg; sourceTree = "<group>"; };
+		3B6CB84A2A61969500E13BBC /* logo-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-color.png"; sourceTree = "<group>"; };
 		3BD04EDA2A56DCAE00F8FC37 /* Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD04EDD2A56DCAE00F8FC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				3BD04EDF2A56DCAE00F8FC37 /* SceneDelegate.swift */,
 				3BD04EE12A56DCAE00F8FC37 /* ViewController.swift */,
 				3BD04EE32A56DCAE00F8FC37 /* Main.storyboard */,
+				3B6CB8482A618A5700E13BBC /* logo.jpeg */,
+				3B6CB84A2A61969500E13BBC /* logo-color.png */,
 				3BD04F282A571BF100F8FC37 /* pizza.jpeg */,
 				3BD04F0D2A56E21600F8FC37 /* GoogleService-Info.plist */,
 				3BD04EE62A56DCAF00F8FC37 /* Assets.xcassets */,
@@ -300,6 +306,8 @@
 				3BD04F0E2A56E21600F8FC37 /* GoogleService-Info.plist in Resources */,
 				3BD04EE72A56DCAF00F8FC37 /* Assets.xcassets in Resources */,
 				3BD04F292A571BF100F8FC37 /* pizza.jpeg in Resources */,
+				3B6CB8492A618A5700E13BBC /* logo.jpeg in Resources */,
+				3B6CB84B2A61969600E13BBC /* logo-color.png in Resources */,
 				3BD04EE52A56DCAE00F8FC37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
