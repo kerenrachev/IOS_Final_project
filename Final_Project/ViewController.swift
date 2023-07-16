@@ -11,13 +11,39 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class ViewController: UIViewController {
+    
+    var iconClick = false
+    let imageicon = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Login button
         submitButton.layer.cornerRadius = submitButton.bounds.height / 2
         submitButton.clipsToBounds = true
         
+        // Enter Password- show/hide password
+        imageicon.image = UIImage(named: "eyeX")
+        
+        let contentView = UIView()
+        contentView.addSubview(imageicon)
+        
+        contentView.frame = CGRect(x: 0, y: 0, width: UIImage(named: "eyeX")!.size.width*0.5, height: UIImage(named: "eyeX")!.size.height*0.5)
+        
+        imageicon.frame = CGRect(x: -10, y: 0, width: UIImage(named: "eyeX")!.size.width*0.5, height: UIImage(named: "eyeX")!.size.height*0.5)
+        
+        password.rightView = contentView
+        password.rightViewMode = .always
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        
+        imageicon.isUserInteractionEnabled = true
+        imageicon.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+        
+        
+        // Firebase
         if FirebaseAuth.Auth.auth().currentUser != nil {
             //loginLabel.isHidden = true
             //emailAddress.isHidden = true
@@ -158,6 +184,24 @@ class ViewController: UIViewController {
         
         present(alert, animated: true)
         
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer:UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        if iconClick
+        {
+            iconClick = false
+            tappedImage.image = UIImage(named: "eye")
+            password.isSecureTextEntry = false
+        }
+        else
+        {
+            iconClick = true
+            tappedImage.image = UIImage(named: "eyeX")
+            password.isSecureTextEntry = true
+        }
     }
     
     
