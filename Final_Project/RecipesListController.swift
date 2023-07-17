@@ -83,22 +83,6 @@ extension RecipesListController: UITableViewDataSource {
         return recipes.count
     }
     
-   /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCellRec
-        
-        
-        let url = URL(string: recipes[indexPath.row].imageUrl )
-        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-        cell.recImage.image = UIImage(data: data!)
-        cell.recName.text = recipes[indexPath.row].recName
-        cell.prepTime.text = recipes[indexPath.row].prepTime
-        
-        //cell.recImage.image
-        //cell.textLabel?.text = recipes[indexPath.row].author
-        return cell
-        
-    }*/
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCellRec
 

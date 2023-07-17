@@ -120,23 +120,6 @@ class NewRecipeController: UIViewController {
 
 extension NewRecipeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-   /* func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            recipeImage.image = image
-        }
-    
-        picker.dismiss(animated: true, completion: nil)
-    }*/
-    
-    /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-                recipeImage.image = image
-            }
-        
-            picker.dismiss(animated: true, completion: nil)
-        }*/
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
             if textField == recipeDescriptionInput {
                 resizeFontToFitContent(textField)

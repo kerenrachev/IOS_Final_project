@@ -75,37 +75,6 @@ class ViewController: UIViewController {
         submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
     }
     
-    
-//    @objc private func submitButtonTapped(){
-//        guard let email = emailAddress.text, !email.isEmpty,
-//              let passwordVal = password.text, !passwordVal.isEmpty else{
-//                  print("Missing email or password")
-//                  return
-//              }
-//
-//        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: passwordVal, completion: { [weak self] result, error in
-//
-//            guard let strongSelf = self else{
-//                return
-//            }
-//
-//            guard error == nil else{
-//                // Show account creation
-//                strongSelf.showCreateAccount(email: email, password: passwordVal)
-//                return
-//            }
-//
-//            strongSelf.emailAddress.resignFirstResponder()
-//            strongSelf.password.resignFirstResponder()
-//
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let tabBarController = storyBoard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-//
-//            tabBarController.modalPresentationStyle = .fullScreen
-//            strongSelf.show(tabBarController, sender: self)
-//
-//        })
-//    }
     @objc private func submitButtonTapped() {
         guard let email = emailAddress.text, !email.isEmpty,
               let passwordVal = password.text, !passwordVal.isEmpty else {
