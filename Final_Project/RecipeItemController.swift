@@ -27,6 +27,12 @@ class RecipeItemController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.layer.cornerRadius = 20
+        imageView.contentMode = .scaleAspectFit
+        
+        authorImage.layer.cornerRadius = 30
+        authorImage.contentMode = .scaleAspectFit
+        
         loadAuthorData()
     }
     

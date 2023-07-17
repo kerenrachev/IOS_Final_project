@@ -15,6 +15,20 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileImage.layer.cornerRadius = 20
+        profileImage.contentMode = .scaleAspectFit
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.borderWidth = 3
+        
+        uploadImage.layer.cornerRadius = uploadImage.bounds.height / 2
+        uploadImage.clipsToBounds = true
+        
+        logoutButton.layer.cornerRadius = logoutButton.bounds.height / 2
+        logoutButton.clipsToBounds = true
+        
+        logoutButton.layer.borderWidth = 3
+        logoutButton.layer.borderColor = UIColor.red.cgColor
+        
         loadDataFromDB()
     }
     
@@ -31,7 +45,8 @@ class ProfileController: UIViewController {
         
     }
     
-    
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var uploadImage: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBAction func uploadImageButton(_ sender: Any) {

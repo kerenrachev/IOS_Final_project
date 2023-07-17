@@ -16,6 +16,22 @@ class NewRecipeController: UIViewController {
     override func viewDidLoad() {
         errorMsg.isHidden = true
         super.viewDidLoad()
+        
+        recipeImage.layer.borderColor = UIColor.black.cgColor
+        recipeImage.layer.borderWidth = 3
+        
+        editImageButon.layer.cornerRadius = editImageButon.bounds.height / 2
+        editImageButon.clipsToBounds = true
+        
+        uploadButton.layer.cornerRadius =
+            uploadButton.bounds.height / 2
+        uploadButton.clipsToBounds = true
+
+        // Make the text field start from the top-left
+        recipeDescriptionInput.contentVerticalAlignment = .top
+        
+        
+        
     }
     
     
@@ -28,6 +44,10 @@ class NewRecipeController: UIViewController {
     
     @IBOutlet weak var recipeImage: UIImageView!
     
+    @IBOutlet weak var editImageButon: UIButton!
+    
+    @IBOutlet weak var uploadButton: UIButton!
+
     @IBAction func didTapUploadButton(_ sender: Any) {
         
         print("Button uplaod tapped")
@@ -37,6 +57,9 @@ class NewRecipeController: UIViewController {
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
+        
+        // Set the content mode to scaleAspectFit
+        recipeImage.contentMode = .scaleAspectFit
     }
     
     @IBAction func didTapSubmitButton(_ sender: Any) {
@@ -98,13 +121,77 @@ class NewRecipeController: UIViewController {
 extension NewRecipeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+   /* func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             recipeImage.image = image
         }
     
         picker.dismiss(animated: true, completion: nil)
+    }*/
+    
+    /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+                recipeImage.image = image
+            }
+        
+            picker.dismiss(animated: true, completion: nil)
+        }*/
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+            if textField == recipeDescriptionInput {
+                resizeFontToFitContent(textField)
+            }
+        }
+
+        private func resizeFontToFitContent(_ textField: UITextField) {
+            guard let text = textField.text else { return }
+            
+            let currentFontSize = textField.font?.pointSize ?? 20 // Set your initial font size here
+            
+            let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: currentFontSize)]
+            let boundingRect = text.boundingRect(with: CGSize(width: textField.frame.width, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+
+            if boundingRect.height > textField.frame.height {
+                let newFontSize = currentFontSize - 1
+                if newFontSize >= 10 { // Set the minimum font size as needed
+                    textField.font = UIFont.systemFont(ofSize: newFontSize)
+                    resizeFontToFitContent(textField) // Recursively call to adjust the font size until it fits the content
+                }
+            }
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let editedImage = info[.editedImage] as? UIImage {
+                recipeImage.image = editedImage
+                adjustImageViewSize() // Resize the image view to fit the new image
+            } else if let originalImage = info[.originalImage] as? UIImage {
+                recipeImage.image = originalImage
+                adjustImageViewSize() // Resize the image view to fit the new image
+            }
+        
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
+    func adjustImageViewSize() {
+        guard let image = recipeImage.image else { return }
+
+        // Calculate the aspect ratio of the image
+        let aspectRatio = image.size.width / image.size.height
+
+        // Calculate the target width and height for the imageView
+        let targetWidth = recipeImage.frame.width
+        let targetHeight = targetWidth / aspectRatio
+
+        // Create a new frame for the imageView with the calculated size
+        let newFrame = CGRect(x: recipeImage.frame.origin.x, y: recipeImage.frame.origin.y, width: targetWidth, height: targetHeight)
+
+        // Apply the new frame to the imageView
+        recipeImage.frame = newFrame
+
+        // Set the content mode to scaleAspectFit
+        recipeImage.contentMode = .scaleAspectFit
     }
+
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

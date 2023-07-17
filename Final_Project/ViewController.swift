@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailAddress.layer.cornerRadius = emailAddress.bounds.height / 2
+        emailAddress.clipsToBounds = true
+        
+        password.layer.cornerRadius = password.bounds.height / 2
+        password.clipsToBounds = true
+        
         // Login button
         submitButton.layer.cornerRadius = submitButton.bounds.height / 2
         submitButton.clipsToBounds = true
