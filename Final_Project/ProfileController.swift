@@ -115,7 +115,7 @@ extension ProfileController: UIImagePickerControllerDelegate, UINavigationContro
             
             let fileRef = storageRef.child("images/" + UUID().uuidString + ".jpeg")
             
-            let uploadTask = fileRef.putData(imageData!, metadata: nil) { metadata, error in
+            let _ = fileRef.putData(imageData!, metadata: nil) { metadata, error in
                 
                 if error == nil && metadata != nil {
                     // Save a reference intht database
